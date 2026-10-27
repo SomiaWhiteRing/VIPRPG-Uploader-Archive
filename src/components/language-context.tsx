@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 
 type Language = "zh" | "ja";
-const LanguageContext = createContext({ language: "zh" as Language, t: (zh: string, ja: string) => zh || ja });
+const LanguageContext = createContext({ language: "zh" as Language, ready: false, t: (zh: string, ja: string) => zh || ja });
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguage] = useState<Language>("zh");
@@ -24,7 +24,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     document.documentElement.lang = language === "ja" ? "ja" : "zh-CN";
     document.documentElement.removeAttribute("data-language-pending");
   }, [language, initialized, pathname]);
-  return <LanguageContext.Provider value={{ language, t: (zh, ja) => language === "ja" ? ja : zh }}>
+  return <LanguageContext.Provider value={{ language, ready: initialized, t: (zh, ja) => language === "ja" ? ja : zh }}>
     {children}
     {target && createPortal(<ul className="nav navbar-nav navbar-right"><li><a href="#" lang={language === "ja" ? "ja" : "zh-CN"} aria-label={language === "ja" ? "現在の言語：日本語。中国語に切り替え" : "当前语言：中文。切换到日语"} title={language === "ja" ? "中国語に切り替え" : "切换到日语"} onClick={event => {
       event.preventDefault();

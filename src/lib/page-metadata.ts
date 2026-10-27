@@ -39,10 +39,3 @@ export function fileInfo(name: string | null | undefined, id: string, uploader: 
   };
 }
 
-export function staticMetadata(info: PageInfo) {
-  return {
-    title: { absolute: info.initialTitle }, description: info.description.zh,
-    openGraph: { title: info.title.zh, description: info.description.zh, siteName: siteName.zh, locale: "zh_CN" },
-    twitter: { card: "summary" as const, title: info.title.zh, description: info.description.zh },
-  };
-}

@@ -31,6 +31,8 @@
 
 导航显示当前语言对应的国旗并支持切换，语言与关闭归档说明的选择保存在浏览器 localStorage。首屏在语言就绪后显示，避免 Bootstrap 的子元素 visibility 覆盖；页面标题、description、Open Graph、Twitter 及界面提示随语言更新。初始化 title 只包含原文件名／上传区名与 VIPRPG，不先显示默认中文站名。禁用 JavaScript 时显示静态中文页面。
 
+`PageMetadata` 通过 React 声明 title 和 meta，由单一组件管理其生命周期，不再与 Next.js 静态标题同时写入 `document.title`，避免生产环境初始化时相互覆盖。
+
 列表、详情、搜索和分页使用原站通知样式说明数据是固定快照。已找到密码并保存成功的文件按普通文件呈现；未保存的密码文件显示真实保存状态，不再展示没有实际作用的密码认证入口。上传、编辑、管理、注册、举报、原站通知和推广等控件不进入模板。
 
 只有 `indexed`（IA 公开元数据匹配长度与 MD5）提供归档下载；`accepted` 仅代表上传端接收，不能视为公开下载已就绪，也不声称逐文件回读通过。传输容器使用实际存储键并说明先解包取出原分卷。
@@ -61,3 +63,5 @@ npm run build
 `npm run build` 生成 `out/`。`wrangler.jsonc` 与 VIPRPG-Archive 一样采用 assets-only 配置和静态 HTML 路径处理，不执行 Worker 服务端代码。获得发布授权后，推送 `main` 或手动触发 `.github/workflows/deploy.yml`，由 GitHub Actions 校验、构建并部署；需要仓库 Secret `CLOUDFLARE_API_TOKEN`。不使用 Cloudflare Builds，不保存 Actions 构建产物或缓存。
 
 `public/_headers` 保留原缓存策略并增加 `no-transform`，防止 Cloudflare 向静态 HTML 自动注入统计脚本而破坏 React 初始化。该设置只作用于本站静态资源，不更改其他站点配置。
+
+无 JavaScript 的回退样式放在 `body` 的 `noscript` 内，原站 CSS 使用相同 `precedence` 保持加载顺序并由 React 管理资源，避免 `head` 的普通节点与 Cloudflare 全域 Google 标签注入发生 React 初始化冲突；不更改全域统计配置。
