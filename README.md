@@ -59,3 +59,5 @@ npm run build
 ```
 
 `npm run build` 生成 `out/`。`wrangler.jsonc` 与 VIPRPG-Archive 一样采用 assets-only 配置和静态 HTML 路径处理，不执行 Worker 服务端代码。获得发布授权后，推送 `main` 或手动触发 `.github/workflows/deploy.yml`，由 GitHub Actions 校验、构建并部署；需要仓库 Secret `CLOUDFLARE_API_TOKEN`。不使用 Cloudflare Builds，不保存 Actions 构建产物或缓存。
+
+`public/_headers` 保留原缓存策略并增加 `no-transform`，防止 Cloudflare 向静态 HTML 自动注入统计脚本而破坏 React 初始化。该设置只作用于本站静态资源，不更改其他站点配置。
