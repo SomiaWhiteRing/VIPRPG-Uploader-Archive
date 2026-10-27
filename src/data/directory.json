@@ -1,0 +1,546 @@
+[
+  {
+    "zh": "祭典用上传区",
+    "ja": "祭り用うｐろだ",
+    "slugs": [],
+    "children": [
+      {
+        "zh": "2025 红白",
+        "ja": "2025 紅白",
+        "slugs": [
+          "vipkohaku2025",
+          "vipkohaku2025_zip"
+        ]
+      },
+      {
+        "zh": "2025 夏之阵",
+        "ja": "2025 夏の陣",
+        "slugs": [
+          "vipnatu2025sono1",
+          "vipnatu2025patti"
+        ]
+      },
+      {
+        "zh": "2024 红白",
+        "ja": "2024 紅白",
+        "slugs": [
+          "vipkouhaku2024_standard",
+          "vipkouhaku2024_standard_2",
+          "vipkouhaku2024_patch"
+        ]
+      },
+      {
+        "zh": "2024 夏之阵",
+        "ja": "2024 夏の陣",
+        "slugs": [
+          "vipsummerfes2024",
+          "vipsummerfes2024patch"
+        ]
+      },
+      {
+        "zh": "2023 GW 祭",
+        "ja": "2023 GW祭",
+        "slugs": [
+          "viprpg2023gw"
+        ]
+      },
+      {
+        "zh": "2022 红白",
+        "ja": "2022 紅白",
+        "slugs": [
+          "naito_horizon",
+          "george_nagaoka"
+        ]
+      },
+      {
+        "zh": "2022 夏之阵",
+        "ja": "2022 夏の陣",
+        "slugs": [
+          "viprpg2022s"
+        ]
+      },
+      {
+        "zh": "2022 GW 祭",
+        "ja": "2022 GW祭",
+        "slugs": [
+          "viprpg2022gw"
+        ]
+      },
+      {
+        "zh": "2021 红白",
+        "ja": "2021 紅白",
+        "slugs": [
+          "viprpgmaker2021",
+          "viprpgmaker20212",
+          "viprpgmaker20213",
+          "viprpgmaker20214",
+          "viprpgmaker20215"
+        ]
+      },
+      {
+        "zh": "2021 夏之阵",
+        "ja": "2021 夏の陣",
+        "slugs": [
+          "viprpgsummer2021_submit",
+          "viprpgsummer2021_patch",
+          "viprpgsummer2021_download"
+        ]
+      },
+      {
+        "zh": "2021 GW 祭",
+        "ja": "2021 GW祭",
+        "slugs": [
+          "viprpg2021gw",
+          "viprpg2021gw2"
+        ]
+      },
+      {
+        "zh": "2020 红白",
+        "ja": "2020 紅白",
+        "slugs": [
+          "viprpg_K2020_2"
+        ]
+      },
+      {
+        "zh": "2020 夏之阵",
+        "ja": "2020 夏の陣",
+        "slugs": [
+          "viprpg_sum2020_2"
+        ]
+      },
+      {
+        "zh": "2020 GW 祭",
+        "ja": "2020 GW祭",
+        "slugs": [
+          "vipgw2020_game",
+          "vipgw2020_game2",
+          "vipgw2020_game_p6"
+        ]
+      },
+      {
+        "zh": "2019 红白",
+        "ja": "2019 紅白",
+        "slugs": [
+          "viprpgkouhaku2019",
+          "viprpgkouhaku2019ex"
+        ]
+      },
+      {
+        "zh": "2019 GW 祭",
+        "ja": "2019 GW祭",
+        "slugs": [
+          "viprpg2019gw_2",
+          "viprpg2019gw_1",
+          "viprpg2019gw_p"
+        ]
+      },
+      {
+        "zh": "2018 红白",
+        "ja": "2018 紅白",
+        "slugs": [
+          "viprpgkohaku20181",
+          "viprpgkohaku20182",
+          "viprpgkohaku2018p1"
+        ]
+      },
+      {
+        "zh": "2018 夏之阵",
+        "ja": "2018 夏の陣",
+        "slugs": [
+          "tkoolvip2018summer"
+        ]
+      },
+      {
+        "zh": "2018 GW 祭",
+        "ja": "2018 GW祭",
+        "slugs": [
+          "viprpg_gw2018_3",
+          "viprpg_gw2018_1",
+          "viprpg_gw2018_2",
+          "viprpg_gw2018_4"
+        ]
+      },
+      {
+        "zh": "2017 红白",
+        "ja": "2017 紅白",
+        "slugs": [
+          "kh2017vip1",
+          "kh2017vip2",
+          "kh2017vip3",
+          "kh2017p"
+        ]
+      },
+      {
+        "zh": "2017 夏之阵",
+        "ja": "2017 夏の陣",
+        "slugs": [
+          "vipsummer2017",
+          "VipSum_01",
+          "VipSum_02",
+          "vipsum_p"
+        ]
+      },
+      {
+        "zh": "2017 GW 祭",
+        "ja": "2017 GW祭",
+        "slugs": [
+          "vipgw2017",
+          "vip2017gw_1",
+          "vip2017gw_patch"
+        ]
+      },
+      {
+        "zh": "2016 红白",
+        "ja": "2016 紅白",
+        "slugs": [
+          "viprpg_kohaku2016_1",
+          "viprpg_kohaku2016_patch_1",
+          "viprpg_kohaku2016_release_1",
+          "viprpg_kohaku2016_release_2"
+        ]
+      },
+      {
+        "zh": "2016 夏之阵",
+        "ja": "2016 夏の陣",
+        "slugs": [
+          "viprpgsun2016"
+        ]
+      },
+      {
+        "zh": "2016 里夏之阵",
+        "ja": "2016 裏夏の陣",
+        "slugs": [
+          "VIPRPGsummer2016_mirror",
+          "VIPRPGsummer2016_mirror2",
+          "VIPRPGsummer2016_1"
+        ]
+      },
+      {
+        "zh": "2016 GW 祭",
+        "ja": "2016 GW祭",
+        "slugs": [
+          "viprpg2016gw_m",
+          "viprpg2016gw_p"
+        ]
+      },
+      {
+        "zh": "2015 红白",
+        "ja": "2015 紅白",
+        "slugs": [
+          "kh2015",
+          "kh2015p"
+        ]
+      },
+      {
+        "zh": "2015 夏之阵",
+        "ja": "2015 夏の陣",
+        "slugs": [
+          "viprpgsum2015",
+          "viprpgsum2015_2"
+        ]
+      },
+      {
+        "zh": "2015 GW 祭",
+        "ja": "2015 GW祭",
+        "slugs": [
+          "vip2015gw",
+          "vip2015gwP"
+        ]
+      },
+      {
+        "zh": "2014 红白",
+        "ja": "2014 紅白",
+        "slugs": [
+          "vipkohaku2014_1",
+          "vipkohaku2014_2",
+          "vipkohaku2014_p"
+        ]
+      },
+      {
+        "zh": "2014 夏之阵",
+        "ja": "2014 夏の陣",
+        "slugs": [
+          "viprpg2014summer",
+          "viprpg2014summerP"
+        ]
+      },
+      {
+        "zh": "2014 GW 祭",
+        "ja": "2014 GW祭",
+        "slugs": [
+          "viprpg2014gw01",
+          "viprpg2014gw10"
+        ]
+      },
+      {
+        "zh": "2013 夏之阵",
+        "ja": "2013 夏の陣",
+        "slugs": [
+          "viprpgsummer2013_1",
+          "viprpgsummer2013_2"
+        ]
+      },
+      {
+        "zh": "2012 红白",
+        "ja": "2012 紅白",
+        "slugs": [
+          "vipkohaku2012_1_1",
+          "vipkohaku2012_1_2",
+          "vipkohaku2012_1_3",
+          "vipkohaku2012_1_4",
+          "vipkohaku2012_1_5"
+        ]
+      },
+      {
+        "zh": "2012 夏之阵",
+        "ja": "2012 夏の陣",
+        "slugs": [
+          "vip2012natsu"
+        ]
+      },
+      {
+        "zh": "2012 GW 祭",
+        "ja": "2012 GW祭",
+        "slugs": [
+          "viprpggw2012"
+        ]
+      },
+      {
+        "zh": "2012 魔法祭",
+        "ja": "2012 魔法祭り",
+        "slugs": [
+          "magicalviprpg2012"
+        ]
+      },
+      {
+        "zh": "2011 红白",
+        "ja": "2011 紅白",
+        "slugs": [
+          "vipkohaku2011_1_1",
+          "vipkohaku2011_1_2",
+          "vipkohaku2011_1_3",
+          "vipkohaku2011_1_4",
+          "vipkohaku2011_1_5"
+        ]
+      },
+      {
+        "zh": "2011 夏之阵",
+        "ja": "2011 夏の陣",
+        "slugs": [
+          "viprpg_summer2011",
+          "viprpg_summer2011_2",
+          "viprpg_summer2011_3"
+        ]
+      },
+      {
+        "zh": "2011 电波游戏祭",
+        "ja": "2011 電波ゲーム祭り",
+        "slugs": [
+          "cryptic2011"
+        ]
+      },
+      {
+        "zh": "2011 GW 祭",
+        "ja": "2011 GW祭",
+        "slugs": [
+          "viprpg2011gw",
+          "viprpg2011gw2"
+        ]
+      },
+      {
+        "zh": "2010 红白",
+        "ja": "2010 紅白",
+        "slugs": [
+          "vipkohaku2010_1",
+          "vipkohaku2010_1b",
+          "vipkohaku2010_1c",
+          "vipkohaku2010_1d",
+          "vipkohaku2010_1e"
+        ]
+      },
+      {
+        "zh": "2010 夏之阵",
+        "ja": "2010 夏の陣",
+        "slugs": [
+          "revsummer01",
+          "revsummer02",
+          "revsummer03",
+          "revsummer04",
+          "revsummer05",
+          "viprpg_summer_2010_up1",
+          "viprpg_summer_2010_up2",
+          "viprpg_summer_2010_up3"
+        ]
+      },
+      {
+        "zh": "2009 红白",
+        "ja": "2009 紅白",
+        "slugs": [
+          "vipkh09up"
+        ]
+      },
+      {
+        "zh": "2009 ksg 祭",
+        "ja": "2009 ksg祭り",
+        "slugs": [
+          "viprpg_ksg"
+        ]
+      },
+      {
+        "zh": "2008 红白",
+        "ja": "2008 紅白",
+        "slugs": [
+          "naoruyo1937",
+          "2008kouhakukari"
+        ]
+      },
+      {
+        "zh": "2008 夏之阵",
+        "ja": "2008 夏の陣",
+        "slugs": [
+          "natunozin",
+          "natunozin2"
+        ]
+      },
+      {
+        "zh": "2007 红白",
+        "ja": "2007 紅白",
+        "slugs": [
+          "viprpg_kouhaku3",
+          "viprpg_kouhaku3_2"
+        ]
+      },
+      {
+        "zh": "2006 红白",
+        "ja": "2006 紅白",
+        "slugs": [
+          "kohaku_2006"
+        ]
+      }
+    ]
+  },
+  {
+    "zh": "主帖用上传区",
+    "ja": "本スレ用うｐろだ",
+    "slugs": [
+      "viprpg_erg",
+      "viprpg_erg2",
+      "viprpg_erg3",
+      "viprpg_erg4",
+      "viprpg_erg5",
+      "viprpg_erg6",
+      "viprpg_erg7",
+      "viprpg_erg8",
+      "viprpg_erg9",
+      "viprpg_mvmz_1",
+      "viprpg_mvmz_2",
+      "viprpg_mvmz_3",
+      "viprpg_mvmz_4",
+      "viprpg_mvmz_5",
+      "viprpg_mvmz_6",
+      "viprpg_mvmz_7",
+      "viprpg_mvmz_8",
+      "viprpg_mvmz_9",
+      "viprpg_mvmz_10",
+      "viprpg_mvmz_temp1"
+    ]
+  },
+  {
+    "zh": "工具等",
+    "ja": "ツールなど",
+    "slugs": [
+      "luppi03"
+    ]
+  },
+  {
+    "zh": "Wiki",
+    "ja": "wiki",
+    "slugs": [
+      "VIPRPG_syoumetu",
+      "VIPRPG_syoumetu2",
+      "part4past",
+      "viprpg_wiki2",
+      "viprpg_wiki2_2",
+      "viprpg_wiki2_3",
+      "viprpg_wiki2_sukebe"
+    ]
+  },
+  {
+    "zh": "保存库",
+    "ja": "保管庫",
+    "slugs": [
+      "obororeverse"
+    ]
+  },
+  {
+    "zh": "其他",
+    "ja": "その他",
+    "slugs": [
+      "viprpg_dev",
+      "xingqier"
+    ]
+  },
+  {
+    "zh": "其他（疑似个人用）",
+    "ja": "その他個人用っぽい",
+    "slugs": [
+      "tkoolsozai",
+      "seok",
+      "garakuta_rpg_material",
+      "kuronekogame",
+      "untitle_monooki",
+      "417tk",
+      "ryo6153",
+      "gndrn_mikan_game",
+      "maru_ultema_tiisanaviprpgtkrar",
+      "jisakusakuhin",
+      "v21s_unofficial_temp",
+      "viprpg_emergency",
+      "viprpg_emergency_2",
+      "viprpg_lodatemp_01",
+      "viprpgmaker20217",
+      "tkool_archives_ura9th",
+      "tkooltoolarchive3",
+      "tkooltoolarchives",
+      "tkooltoolarchive2"
+    ]
+  },
+  {
+    "zh": "？",
+    "ja": "？",
+    "slugs": [
+      "2003_Maker_jp",
+      "41375639781207085_viprpg_dev"
+    ]
+  },
+  {
+    "zh": "？可能是个人用（空、只有杂项或只有带密码的文件）",
+    "ja": "？多分個人用（空もしくはごみしかないもしくは鍵のみ）",
+    "slugs": [
+      "tktk_viprpg",
+      "vipper",
+      "viprpg",
+      "oreore",
+      "moshimo_banana_dattara",
+      "kinukosi_viprpg"
+    ]
+  },
+  {
+    "zh": "モナーRPG",
+    "ja": "モナーRPG",
+    "slugs": [
+      "monarpg",
+      "monarelay",
+      "saitamar",
+      "UNIVEEERSE",
+      "saitama"
+    ]
+  },
+  {
+    "zh": "アレックス総受け",
+    "ja": "アレックス総受け",
+    "slugs": [
+      "alex801uploader"
+    ]
+  }
+]

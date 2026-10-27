@@ -1,0 +1,68 @@
+body {
+  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro", "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "メイリオ", sans-serif;
+  background-color:#FBFBFB !important;
+
+  min-height: 100px;
+  padding-top: 55px; /* 70px */
+}
+
+.panel {
+  background-color:#FBFBFB !important;
+}
+
+.lead {
+  font-size: 14px !important; /* 16px */
+}
+@media (min-width: 768px) {
+  .lead {
+    font-size: 19px !important; /* 21px */
+  }
+}
+
+#banner_eye_catch {
+  margin: 0 auto;
+  text-align: center;
+  /* margin: 0em; */
+}
+
+.space {
+  margin: 1em 0em 1em; /* 上 左右 下 */
+}
+
+.lock {
+  margin-right: .5em;
+}
+
+.pagination {
+  margin: 5px 0 !important; /* 20px */
+}
+
+.agree { /* for download_needpassword and stupid IE */
+  line-height: 1 !important;
+}
+
+.thanks {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #228B22;
+}
+
+.download:link,.download:visited,.download:hover,.download:active {
+/*  font-size: 1.2em; */
+  font-weight: bold;
+  color: #228B22;
+}
+
+.tweet:link,.tweet:visited,.tweet:hover,.tweet:active {
+  color: #55ACEE;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 870px !important;
+}
+
+@media (min-width: 1200px) {
+  .container {
+      width: 1170px !important;
+  }
+}

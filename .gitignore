@@ -1,0 +1,24 @@
+/node_modules/
+/.next/
+/out/
+/.wrangler/
+*.tsbuildinfo
+.env*
+npm-debug.log*
+/.playwright-mcp/
+
+# Local development, recovery evidence and reports (not build inputs)
+/local/
+/outputs/
+/test-results/
+/coverage/
+/src/data/original-pages/
+/src/data/original-pages.json
+/src/data/source-metadata.json
+/src/data/original-missing.json
+/src/data/source-import-report.json
+/src/data/directory-source.html
+/public/vendor/uploader/source-assets.json
+*.log
+__pycache__/
+*.pyc

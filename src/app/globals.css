@@ -1,0 +1,51 @@
+/* Visual rules come from the captured uploader.jp stylesheets. */
+html[data-language-pending] body { opacity: 0; pointer-events: none; }
+[aria-disabled="true"] { cursor: default; }
+.archive-form .form-control { width: min(650px, 100%); }
+.archive-form .form-group { display: block; }
+*:focus, *:focus-visible, .form-control:focus, .btn:focus, .btn:active:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.form-control:focus { border-color: #ccc !important; }
+.btn-default:focus, .btn-default:active:focus { border-color: #ccc !important; }
+.homepage .page-header { margin-top: 25px; }
+.homepage .page-header h1 { margin-bottom: 12px; }
+.homepage .well { margin-bottom: 24px; padding: 14px 18px; }
+.homepage .well section { margin: 0; }
+.homepage .archive-form label { margin-bottom: 8px; }
+.homepage .archive-form .form-control { width: 100%; }
+.homepage .help-block { margin-bottom: 0; font-size: 12px; }
+.directory-toolbar { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+.directory-toolbar .form-control { width: 340px; max-width: 100%; }
+.directory-category { margin-bottom: 10px; }
+.directory summary { display: flex; align-items: center; gap: 10px; cursor: pointer; padding: 12px 15px; list-style: none; }
+.directory summary::-webkit-details-marker { display: none; }
+.directory summary:hover { background: #f5f5f5; }
+.directory summary .glyphicon { color: #777; flex-shrink: 0; }
+.directory details:not([open]) > summary .glyphicon::before { content: "\e117"; }
+.directory-name { flex: 1; min-width: 0; }
+.directory summary .badge { flex-shrink: 0; font-variant-numeric: tabular-nums; }
+.directory-category[open] > summary { border-bottom: 1px solid #ddd; background: #f5f5f5; }
+.directory .directory-children { padding: 0; }
+.directory .directory-festivals { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px 12px; }
+.directory-festival > summary { padding: 10px; }
+.directory-festival[open] { grid-column: 1 / -1; }
+.directory .table-responsive { margin: 0; border: 0; }
+.directory .table { min-width: 500px; margin: 0; }
+.directory th { white-space: nowrap; }
+.directory td:first-child { overflow-wrap: anywhere; }
+.directory td:not(:first-child) { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.directory-count { width: 90px; }
+.directory-source { width: 100px; }
+@media (max-width: 991px) {
+  .directory .directory-festivals { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .homepage .page-header h1 { font-size: 27px; }
+  .homepage .page-header h1 small { display: block; margin-top: 8px; }
+  .homepage .well { padding: 12px; }
+  .directory .directory-festivals { grid-template-columns: minmax(0, 1fr); }
+  .directory-toolbar { flex-wrap: wrap; }
+  .directory-toolbar .form-control { width: 100%; }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "viprpg-uploader-archive",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build --turbopack",
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit",
+    "deploy": "npm run build && wrangler deploy"
+  },
+  "dependencies": {
+    "next": "15.5.9",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "cheerio": "^1.1.2",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.4",
+    "typescript": "^5",
+    "wrangler": "4.132.0"
+  }
+}
