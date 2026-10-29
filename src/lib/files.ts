@@ -42,7 +42,6 @@ export function downloadUrl(file: ArchiveFile) {
 }
 
 export function fileStatus(file: ArchiveFile, language: "zh" | "ja" = "zh") {
-  if (file.supplement?.modified) return language === "ja" ? "変更済み保存版をダウンロード可能" : "清理版可下载";
   if (file.supplement || file.state === "indexed") return language === "ja" ? "ダウンロード可能" : "可下载";
   if (file.state === "accepted") return language === "ja" ? "公開インデックスへの反映待ち" : "等待公开索引";
   if (file.state === "failed") return language === "ja" ? "アップロードに失敗" : "上传失败";
