@@ -9,11 +9,13 @@ from contextlib import closing
 
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--root', type=Path, required=True)
+parser.add_argument('--work-name', default='ia-upload-uploaderjp')
+parser.add_argument('--identifier', default='VIPRPG-uploaderjp-Archive')
 args = parser.parse_args()
 root = args.root.resolve()
 report = Path((root / 'reports/latest-ia-upload.txt').read_text(encoding='utf-8').strip())
 plan = json.loads((report / 'public-plan.json').read_text(encoding='utf-8'))
-work = root / 'ia-upload'
+work = root / args.work_name
 transports = json.loads((work / 'transports.json').read_text(encoding='utf-8'))
 transport_by_source = {value.get('source_logical_key', key): value for key, value in transports.items()}
 with closing(sqlite3.connect((work / 'queue.sqlite').as_uri() + '?mode=ro', uri=True)) as db:
@@ -49,6 +51,6 @@ destination = Path(__file__).resolve().parents[1] / 'src/data/catalog.json'
 destination.parent.mkdir(parents=True, exist_ok=True)
 destination.write_text(json.dumps({
     'updatedAt': datetime.now(timezone.utc).isoformat(),
-    'identifier': plan['identifier'], 'groups': groups, 'files': files,
+    'identifier': args.identifier, 'groups': groups, 'files': files,
 }, ensure_ascii=False, separators=(',', ':')) + '\n', encoding='utf-8')
 print(f'Exported {len(groups)} uploaders and {len(files)} file records to {destination}')

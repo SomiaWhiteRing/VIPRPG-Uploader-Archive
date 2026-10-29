@@ -7,6 +7,7 @@
 构建只读取清洗好的 JSON 与共用 React 模板，不访问原网站、不解析缓存 HTML，也不需要下载队列或本地恢复目录。
 
 - `src/data/catalog.json`：上传区、文件编号、原地址、本地保存状态、IA 上传／公开状态及实际存储键。
+- `src/data/supplements.json`：已公开的 GitHub Release 补充附件映射，包含上传区／编号、下载地址、附件 MD5、实际容量及是否为清理版。它独立于 IA 快照，重新同步 `catalog.json` 不会清除补充链接。
 - `src/data/archive.json`：上传区名称与说明、文件详情、列表原始顺序和分页关系。说明只允许文字、换行、链接、加粗及强调等结构化节点，不保存整页 HTML。
 - `src/data/directory.json`：首页栏目及祭典分组。
 - `src/data/directory-source.json`：Neocities 分类来源的公开 URL 和抓取时间。
@@ -36,6 +37,11 @@
 列表、详情、搜索和分页使用原站通知样式说明数据是固定快照。已找到密码并保存成功的文件按普通文件呈现；未保存的密码文件显示真实保存状态，不再展示没有实际作用的密码认证入口。上传、编辑、管理、注册、举报、原站通知和推广等控件不进入模板。
 
 只有 `indexed`（IA 公开元数据匹配长度与 MD5）提供归档下载；`accepted` 仅代表上传端接收，不能视为公开下载已就绪，也不声称逐文件回读通过。传输容器使用实际存储键并说明先解包取出原分卷。
+
+用户另行授权的 GitHub Release 补充附件优先使用 `supplements.json` 中的地址，不把 IA 的安全排除状态改写为 `indexed`。附件使用“上传区__六位编号”唯一命名，原文件名与来源保存在 Release 标签和 `manifest.json` 中。页面显示对应检测记录入口、实际附件 MD5 与容量；检测命中原包不自动视为安全。`magicalviprpg2012/56` 使用明确标识的清理版：只移除了可疑自解压 EXE，剩余 JPG 的内容及压缩数据不变，来源原包 MD5 与清理版 MD5 分开显示。
+
+2026-10-29，当前 GitHub Release 已完成 816 个有效附件及公开 manifest 的核对，另有 1 个原来源为 0 字节的项目保留缺失记录。补充范围包括检测命中与用户指定的待审留档，来源和检查分类保留在 manifest 中。GitHub 与 VT 后台流程已收尾停止；IA 继续维护其独立的 8,149 个来源集合。`sync_catalog.py` 默认从 `ia-upload-uploaderjp/queue.sqlite` 读取一致性快照，使用 `VIPRPG-uploaderjp-Archive`，只把公开元数据长度与 MD5 已核对的文件标记为可下载。原包保留在分发平台，Git 与 Cloudflare 只保存网站和元信息。
+
 
 ## 本地数据准备
 

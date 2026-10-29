@@ -20,6 +20,13 @@ export interface ArchiveFile {
   remotePath: string | null;
   requiresUnwrap: boolean;
   archiveMember: string | null;
+  supplement?: {
+    url: string;
+    md5: string;
+    size: number;
+    modified: boolean;
+    releaseUrl: string;
+  };
 }
 
 export type ListedFile = Pick<ArchiveFile, "uploader" | "id" | "name" | "listedSize" | "date" | "size" | "localState">
@@ -30,10 +37,13 @@ export function filePath(file: Pick<ArchiveFile, "uploader" | "id">) {
 }
 
 export function downloadUrl(file: ArchiveFile) {
-  return `https://archive.org/download/viprpg-uploader-archive/${file.remotePath?.split("/").map(encodeURIComponent).join("/")}`;
+  if (file.supplement) return file.supplement.url;
+  return `https://archive.org/download/VIPRPG-uploaderjp-Archive/${file.remotePath?.split("/").map(encodeURIComponent).join("/")}`;
 }
 
 export function fileStatus(file: ArchiveFile, language: "zh" | "ja" = "zh") {
+  if (file.supplement?.modified) return language === "ja" ? "変更済み保存版をダウンロード可能" : "清理版可下载";
+  if (file.supplement) return language === "ja" ? "補完アーカイブをダウンロード可能" : "补充存档可下载";
   if (file.state === "indexed") return language === "ja" ? "ダウンロード可能" : "可下载";
   if (file.state === "accepted") return language === "ja" ? "公開インデックスへの反映待ち" : "等待公开索引";
   if (file.state === "failed") return language === "ja" ? "アップロードに失敗" : "上传失败";
