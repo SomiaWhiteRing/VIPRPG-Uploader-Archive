@@ -20,6 +20,7 @@ export interface ArchiveFile {
   remotePath: string | null;
   requiresUnwrap: boolean;
   archiveMember: string | null;
+  downloadVerified?: boolean;
   supplement?: {
     url: string;
     md5: string;
@@ -36,13 +37,18 @@ export function filePath(file: Pick<ArchiveFile, "uploader" | "id">) {
   return `/${file.uploader}/download/${file.id}`;
 }
 
+export function canDownload(file: ArchiveFile) {
+  return Boolean(file.supplement || ((file.state === "indexed" || file.downloadVerified) && file.remotePath));
+}
+
 export function downloadUrl(file: ArchiveFile) {
   if (file.supplement) return file.supplement.url;
   return `https://archive.org/download/VIPRPG-uploaderjp-Archive/${file.remotePath?.split("/").map(encodeURIComponent).join("/")}`;
 }
 
 export function fileStatus(file: ArchiveFile, language: "zh" | "ja" = "zh") {
-  if (file.supplement || file.state === "indexed") return language === "ja" ? "ダウンロード可能" : "可下载";
+  if (file.state === "source_damaged") return language === "ja" ? "元ファイルが破損しています" : "原始文件已损毁";
+  if (canDownload(file)) return language === "ja" ? "ダウンロード可能" : "可下载";
   if (file.state === "accepted") return language === "ja" ? "公開インデックスへの反映待ち" : "等待公开索引";
   if (file.state === "failed") return language === "ja" ? "アップロードに失敗" : "上传失败";
   if (file.localState === "skipped_password") return language === "ja" ? "パスワード付き・未保存" : "密码文件未保存";

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import ArchiveChrome from "@/components/archive-chrome";
 import { useLanguage } from "@/components/language-context";
-import { downloadUrl, fileStatus, type ArchiveFile } from "@/lib/files";
+import { canDownload, downloadUrl, fileStatus, type ArchiveFile } from "@/lib/files";
 import type { FileDetails } from "@/lib/archive-types";
 
 export default function FileView({ file, details, uploaderTitle, uploaderAvailable }: {
@@ -27,7 +27,7 @@ export default function FileView({ file, details, uploaderTitle, uploaderAvailab
         {details?.counter && <tr><th>{t("下载次数", "ダウンロード")}</th><td>{details.counter}</td></tr>}
         <tr><th>{t("归档状态", "保存状況")}</th><td>{fileStatus(file, language)}</td></tr>
       </tbody></table>
-      <div className="text-center space">{file.supplement || (file.state === "indexed" && file.remotePath)
+      <div className="text-center space">{canDownload(file)
         ? <a className="btn btn-default btn-xs" href={downloadUrl(file)}>{file.requiresUnwrap && !file.supplement ? t("下载分卷容器 ZIP", "分割ファイルを収めた ZIP をダウンロード") : t("下载", "ダウンロード")}</a>
         : <><button className="btn btn-default btn-xs" type="button" disabled>{t("下载", "ダウンロード")}</button><p className="text-muted">{fileStatus(file, language)}</p></>}
       </div>
