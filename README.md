@@ -4,11 +4,11 @@ uploader.jp / getuploader.com で公開された VIPRPG のゲーム・素材と
 
 [保存庫を開く][site] · [Internet Archive][ia] · [補完アーカイブ][release]
 
-閲覧サイトは日本語・中国語に対応しています。元の uploader.jp URL のドメインを `uploader.viprpg.org` に置き換えると、対応するページを開けます。
+元の uploader.jp URL のドメインを `uploader.viprpg.org` に置き換えると、対応するページを開けます。
 
-元の作品名・ファイル名・コメント・投稿日時を保ち、各詳細ページに保存状況とダウンロード先をまとめています。本リポジトリは閲覧サイトと収録情報を管理し、保存ファイルは Internet Archive と GitHub Releases で提供しています。
+元の作品名・ファイル名・コメント・投稿日時を保っています。本リポジトリは閲覧サイトと収録情報を管理し、保存ファイルは Internet Archive と GitHub Releases で提供しています。
 
-分類は [VIPRPG 関連アップローダー一覧][directory] をもとにしています。各作品・素材の権利は、それぞれの作者に帰属します。
+分類は [VIPRPG 関連アップローダー一覧（Neocities）][directory] をもとにしています。
 
 # VIPRPG 上传区保存库
 
@@ -16,11 +16,11 @@ uploader.jp / getuploader.com で公開された VIPRPG のゲーム・素材と
 
 [浏览保存库][site] · [Internet Archive][ia] · [补充存档][release]
 
-浏览网站支持日语和中文。将原 uploader.jp 地址的域名替换为 `uploader.viprpg.org`，即可打开对应页面。
+将原 uploader.jp 地址的域名替换为 `uploader.viprpg.org`，即可打开对应页面。
 
-保存库保留原作品名、文件名、评论和投稿时间，各详情页列出保存状态与下载地址。本仓库维护浏览网站及归档目录，文件由 Internet Archive 和 GitHub Releases 提供。
+保存库保留原作品名、文件名、评论和投稿时间。本仓库维护浏览网站及归档目录，文件由 Internet Archive 和 GitHub Releases 提供。
 
-分类参考 [VIPRPG 相关上传区目录][directory]。各作品与素材的权利归原作者所有。
+分类参考 [VIPRPG 相关上传区目录（Neocities）][directory]。
 
 [site]: https://uploader.viprpg.org/
 [ia]: https://archive.org/details/VIPRPG-uploaderjp-Archive
