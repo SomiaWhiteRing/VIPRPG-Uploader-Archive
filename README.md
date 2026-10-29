@@ -16,7 +16,7 @@
 
 清单省略与 `catalog.json` 完全相同的名称、原文件名、容量，以及与完整评论相同的列表评论，由既有回退规则显示同样的值；导入脚本自动执行这一精简。构建端统一建立文件索引，列表和搜索页只向浏览器传递实际使用的字段，不携带 MD5、归档存储路径等详情数据。
 
-183 个上传区、10,668 份文件详情和 824 份列表／分页记录已结构化。169 个文件没有有效详情快照，页面明确显示仅有索引信息。原作品名、评论、日期、原始下载次数与上传区说明保留原文，网页的操作与状态文字支持中日文。
+199 个上传区、10,692 份文件详情和 840 份列表／分页记录已结构化。171 个文件没有有效详情快照，页面明确显示仅有索引信息。原作品名、评论、日期、原始下载次数与上传区说明保留原文，网页的操作与状态文字支持中日文。
 
 原站 HTML、抓取记录、缺页报告、浏览器测试输出和构建产物属于本地开发资料，由 `.gitignore` 排除，不提交、不参与 GitHub Actions 构建。本地旧 HTML 证据仍保留，不因页面实现调整而改写或删除。
 
@@ -26,7 +26,9 @@
 
 将 `https://uu.getuploader.com/part4past/download/1` 的域名换成 `uploader.viprpg.org` 即可直达。保留上传区大小写。首页支持粘贴原 uploader 地址定位上传区或文件。
 
-主页按 Neocities 原目录收纳：祭典置于最前，内部按具体祭典分组；本スレ用うｐろだ置于第二位，其余栏目维持原顺序。183 个上传区各出现一次。分类来源为 `https://viprpg.neocities.org/contents/uploader`，来源在底栏标注。
+主页按 Neocities 原目录收纳：祭典置于最前，内部按具体祭典分组；本スレ用うｐろだ置于第二位，其余栏目维持原顺序。199 个上传区各出现一次。分类来源为 `https://viprpg.neocities.org/contents/uploader`，来源在底栏标注。
+
+“本串拾遗 / 本スレ拾遺”按16个上传区列出本次选定的26条历史本串链接，仅追加这些文件记录。已保存并在 GitHub Release 公开回读核对的附件通过 `supplements.json` 关联；下载密码不进入展示字段，成功保存后按普通文件呈现。来源已失效的条目保留索引和实际保存状态。
 
 ## 展示规则
 
@@ -40,7 +42,9 @@
 
 用户另行授权的 GitHub Release 补充附件优先使用 `supplements.json` 中的地址，不把 IA 的安全排除状态改写为 `indexed`。附件使用“上传区__六位编号”唯一命名，原文件名与来源保存在 Release 标签和 `manifest.json` 中。页面显示对应检测记录入口、实际附件 MD5 与容量；检测命中原包不自动视为安全。`magicalviprpg2012/56` 使用明确标识的清理版：只移除了可疑自解压 EXE，剩余 JPG 的内容及压缩数据不变，来源原包 MD5 与清理版 MD5 分开显示。
 
-2026-10-29，当前 GitHub Release 已完成 816 个有效附件及公开 manifest 的核对，另有 1 个原来源为 0 字节的项目保留缺失记录。补充范围包括检测命中与用户指定的待审留档，来源和检查分类保留在 manifest 中。GitHub 与 VT 后台流程已收尾停止；IA 继续维护其独立的 8,149 个来源集合。`sync_catalog.py` 默认从 `ia-upload-uploaderjp/queue.sqlite` 读取一致性快照，使用 `VIPRPG-uploaderjp-Archive`，只把公开元数据长度与 MD5 已核对的文件标记为可下载。原包保留在分发平台，Git 与 Cloudflare 只保存网站和元信息。
+2026-10-30，按最新 Release `vt-supplement-2026-10-28` 的公开附件及三份清单核对了 839 份补充文件：原批次 816 份、本串拾遗 22 份、加密归档补充 1 份。对应记录分别见 `manifest.json`、`thread-additions-2026-10-30.json`、`manifest-encrypted-2026-10-30.json`；附件地址与容量均与 Release 一致，MD5 与各自清单一致。原批次另有 1 个来源为 0 字节的项目，本串拾遗另有 4 条未保存来源，均保留缺失记录。
+
+同日根据 `VIPRPG-uploaderjp-Archive` 的公开元数据核对，8,142 份 IA 文件的长度与 MD5 匹配保存记录，另 6 份仍为上传接收后等待公开索引，1 份加密归档由上述 Release 提供。网站合计 10,863 条文件记录，其中 8,981 条可下载。IA 排除与待审状态继续保留，GitHub 补充附件不改写这些状态。`sync_catalog.py` 默认从 `ia-upload-uploaderjp/queue.sqlite` 读取一致性快照；刷新时仍需以 IA 公开元数据核对长度与 MD5，不能仅凭上传接收状态判为可下载。原包保留在分发平台，Git 与 Cloudflare 只保存网站和元信息。
 
 
 ## 本地数据准备
@@ -50,9 +54,10 @@
 ```powershell
 python -X utf8 -B scripts/sync_catalog.py --root D:/VIPRPG-Rescue/uploaderjp-202611
 node scripts/import_archive.mjs D:/VIPRPG-Rescue/uploaderjp-202611
+python -X utf8 -B D:/VIPRPG-Rescue/thread-link-additions-20261030/merge_site.py
 ```
 
-第一步只读上传账本并导出公开状态；第二步只读已保存的源页面，在入口提取和清洗结构化字段，导出 `archive.json`。它不上传文件、不执行原站脚本、不改动工作进程或队列。坏元数据与缺页清单保存在被忽略的 `local/reports/`。
+第一步只读上传账本并导出公开状态；第二步只读已保存的源页面，在入口提取和清洗结构化字段，导出 `archive.json`。第三步重新合并“本串拾遗”的26条独立保存记录，避免基础快照覆盖本批新增条目。它不上传文件、不执行原站脚本、不改动工作进程或队列。坏元数据与缺页清单保存在被忽略的 `local/reports/`。
 
 导出后将 JSON 数据随代码提交；GitHub Actions 不运行导入步骤，也不依赖开发机器上的源页面缓存。
 

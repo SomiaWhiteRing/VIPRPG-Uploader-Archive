@@ -23,7 +23,7 @@ export default function Directory({ groups }: { groups: (Uploader & { title: str
       <div className={`directory-children${children.length ? " directory-festivals" : ""}`}>
         {children.map(child => renderFolder(child, level + 1))}
         {folder.slugs.some(slug => bySlug.has(slug)) && <div className="table-responsive"><table className="table table-small-font table-hover"><colgroup><col /><col className="directory-count" /><col className="directory-count" /><col className="directory-source" /></colgroup><thead><tr><th>{t("上传区", "アップローダー")}</th><th className="text-right">{t("文件记录", "ファイル")}</th><th className="text-right">{t("可下载", "ダウンロード可能")}</th><th className="text-right">{t("原站", "元サイト")}</th></tr></thead><tbody>
-          {folder.slugs.map(slug => { const group = bySlug.get(slug); return group && <tr key={slug}><td><Link href={`/${slug}`} title={slug}>{group.title}</Link></td><td className="text-right">{group.total.toLocaleString("en-US")}</td><td className="text-right">{(group.counts.indexed ?? 0).toLocaleString("en-US")}</td><td className="text-right"><a href={group.sourceUrl}>{t("原上传区", "元のページ")}</a></td></tr>; })}
+          {folder.slugs.map(slug => { const group = bySlug.get(slug); return group && <tr key={slug}><td><Link href={`/${slug}`} title={slug}>{group.title}</Link></td><td className="text-right">{group.total.toLocaleString("en-US")}</td><td className="text-right">{(group.counts.available ?? 0).toLocaleString("en-US")}</td><td className="text-right"><a href={group.sourceUrl}>{t("原上传区", "元のページ")}</a></td></tr>; })}
         </tbody></table></div>}
       </div>
     </details>;

@@ -21,4 +21,7 @@ for (const file of catalog.files) {
   filesByGroup.set(file.uploader, group);
 }
 for (const files of filesByGroup.values()) files.sort((a, b) => Number(b.id) - Number(a.id));
+for (const group of catalog.groups) {
+  group.counts.available = (filesByGroup.get(group.slug) || []).filter(file => file.supplement || file.state === "indexed").length;
+}
 
