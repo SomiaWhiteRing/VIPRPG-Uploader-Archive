@@ -516,6 +516,20 @@
       "gndrn_mikan_game",
       "maru_ultema_tiisanaviprpgtkrar",
       "jisakusakuhin",
+      "note",
+      "vipdetktk",
+      "kanetaretktk",
+      "knatktk",
+      "romra",
+      "reviewksg",
+      "trebblemax_bank01",
+      "trebblemax_bank02",
+      "ksgup",
+      "rocky75",
+      "rpgtkoolpoko",
+      "gomes",
+      "aoh",
+      "sink_into_blood",
       "v21s_unofficial_temp",
       "viprpg_emergency",
       "viprpg_emergency_2",
@@ -532,7 +546,24 @@
     "ja": "？",
     "slugs": [
       "2003_Maker_jp",
-      "41375639781207085_viprpg_dev"
+      "41375639781207085_viprpg_dev",
+      "ksgUerg",
+      "meikai_"
+    ]
+  },
+  {
+    "zh": "单独收录",
+    "ja": "個別",
+    "slugs": [
+      "anime"
+    ]
+  },
+  {
+    "zh": "其他上传区",
+    "ja": "他",
+    "slugs": [
+      "mosister",
+      "4thforce"
     ]
   },
   {
@@ -544,7 +575,10 @@
       "viprpg",
       "oreore",
       "moshimo_banana_dattara",
-      "kinukosi_viprpg"
+      "kinukosi_viprpg",
+      "tktktoolbackup",
+      "brauny_uploder",
+      "nuinnullpo"
     ]
   },
   {
@@ -562,7 +596,11 @@
     "zh": "アレックス総受け",
     "ja": "アレックス総受け",
     "slugs": [
-      "alex801uploader"
+      "alex801uploader",
+      "tktksyotakon",
+      "spmfmf_ksg",
+      "alex_souuke",
+      "alexsouuke_ladyyou"
     ]
   }
 ]
