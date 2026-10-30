@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-30T17:43:58.789499+00:00",
+  "updatedAt": "2026-10-30T17:50:18.336014+00:00",
   "identifier": "VIPRPG-uploaderjp-Archive",
   "groups": [
     {
@@ -1967,6 +1967,14 @@
     {
       "slug": "anime",
       "sourceUrl": "https://u3.getuploader.com/anime/",
+      "total": 1,
+      "counts": {
+        "indexed": 1
+      }
+    },
+    {
+      "slug": "vip2005_o1121",
+      "sourceUrl": "https://uu.getuploader.com/vip2005_o1121/",
       "total": 1,
       "counts": {
         "indexed": 1
@@ -177503,6 +177511,20 @@
       "localState": "done",
       "state": "indexed",
       "remotePath": "meikai_/000001.jpg",
+      "requiresUnwrap": false,
+      "archiveMember": null
+    },
+    {
+      "uploader": "vip2005_o1121",
+      "id": "1",
+      "name": "【調査資料】2005年7月VIP欠落タイムスタンプ一覧.txt",
+      "sourceUrl": "https://uu.getuploader.com/vip2005_o1121/download/1",
+      "listedSize": "32.5 KB",
+      "date": "26/10/12 07:34",
+      "size": 33254,
+      "localState": "done",
+      "state": "indexed",
+      "remotePath": "vip2005_o1121/000001.txt",
       "requiresUnwrap": false,
       "archiveMember": null
     }
