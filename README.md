@@ -46,6 +46,8 @@ node scripts/import_archive.mjs <rescue-root>
 
 `<rescue-root>` はローカル保存元のパスです。書き出し後に追加収録分の統合処理を行い、補完ファイル・保存状態・別名の対応表を含めて確認し、JSON をコミットします。サイトのビルドは、これらの JSON とテンプレートを読み込みます。
 
+後から保存したダウンロード詳細ページは、`node scripts/import_archive.mjs --missing-details <rescue-root> [<rescue-root> ...]` で未収録分のみを取り込めます。既存の詳細・アップローダー紹介・一覧は保持されます。
+
 ## デプロイ
 
 `main` への push、または `.github/workflows/deploy.yml` の手動実行で、検査・ビルド・Cloudflare への配信を行います。配信設定は `wrangler.jsonc`、必要なリポジトリ Secret は `CLOUDFLARE_API_TOKEN` です。
@@ -97,6 +99,8 @@ node scripts/import_archive.mjs <rescue-root>
 ```
 
 `<rescue-root>` 为本地保存目录路径。导出后执行追加收录批次的合并流程，连同补充文件、保存状态和别名映射一起检查，再提交 JSON。网站构建读取这些 JSON 与模板。
+
+后续保存的下载详情页可用 `node scripts/import_archive.mjs --missing-details <rescue-root> [<rescue-root> ...]` 仅补入遗漏，保留已有详情、上传区介绍和目录。
 
 ## 部署
 

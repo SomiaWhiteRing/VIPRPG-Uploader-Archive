@@ -17,7 +17,7 @@ export default function FileView({ file, details, uploaderTitle, uploaderAvailab
       <h1 className="lead">{uploaderAvailable ? <Link prefetch={false} href={`/${file.uploader}`}>{uploaderTitle}</Link> : uploaderTitle}{t(" 中的文件：", " より、")}<strong>{name}</strong>{t("", " をダウンロードします。")}</h1>
     </div>
     <div className="container"><div className="row"><div className="col-sm-8 col-sm-offset-2">
-      {!details?.hasDetail && <p className="text-muted">{t("尚无可还原的原文件页面，以下仅显示已保存的索引。", "元のファイルページを復元できないため、保存済みのファイル情報のみを表示しています。")}</p>}
+      {!details?.hasDetail && <p className="text-muted">{t("未收录原下载详情页，以下信息来自已保存的目录索引。", "元のダウンロード詳細ページは未収録のため、以下は保存済みの一覧情報を表示しています。")}</p>}
       <table className="table space"><caption><span className="glyphicon glyphicon-file" aria-hidden="true" /> <em>{t("下载详情：", "ダウンロード情報：")}</em></caption><tbody>
         <tr><th style={{ width: 100 }}>{t("文件", "ファイル")}</th><td>{name}</td></tr>
         <tr><th>{t("评论", "コメント")}</th><td><strong style={{ whiteSpace: "pre-wrap" }}>{details?.comment || details?.listComment || ""}</strong></td></tr>
