@@ -3,14 +3,26 @@ html[data-language-pending] body { opacity: 0; pointer-events: none; }
 [aria-disabled="true"] { cursor: default; }
 .archive-form .form-control { width: min(650px, 100%); }
 .archive-form .form-group { display: block; }
+body:has(.global-search) .container { max-width: 100%; }
+.global-search-options { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.global-sort-buttons { display: inline-flex; flex-direction: column; justify-content: center; height: 16px; vertical-align: middle; }
+.global-sort-buttons button { display: flex; align-items: center; justify-content: center; border: 0; padding: 0 2px; height: 8px; background: none; color: #aaa; font-size: 0; }
+.global-sort-buttons button::before { content: ""; border-right: 5px solid transparent; border-left: 5px solid transparent; }
+.global-sort-buttons button:first-child::before { border-bottom: 5px solid currentColor; }
+.global-sort-buttons button:last-child::before { border-top: 5px solid currentColor; }
+.global-sort-buttons button[aria-pressed="true"], .global-sort-buttons button:hover { color: #337ab7; }
+.global-search .table-responsive[data-pattern="priority-columns"] > .table > tbody > tr > .global-search-empty { padding: 32px 8px; white-space: normal; }
+.global-search .table-responsive[data-pattern="priority-columns"] > .table > tbody > tr > :is(.global-search-filename, .global-search-comment, .global-search-uploader) { white-space: normal; overflow-wrap: anywhere; }
+.global-search .global-search-filename, .global-search .global-search-comment { min-width: 130px; max-width: 260px; }
+.global-search .global-search-uploader { min-width: 100px; max-width: 180px; }
 *:focus, *:focus-visible, .form-control:focus, .btn:focus, .btn:active:focus {
   outline: none !important;
   box-shadow: none !important;
 }
 .form-control:focus { border-color: #ccc !important; }
 .btn-default:focus, .btn-default:active:focus { border-color: #ccc !important; }
-.homepage .page-header { margin-top: 25px; }
-.homepage .page-header h1 { margin-bottom: 12px; }
+:is(.homepage, .global-search) .page-header { margin-top: 25px; }
+:is(.homepage, .global-search) .page-header h1 { margin-bottom: 12px; }
 .homepage .well { margin-bottom: 24px; padding: 14px 18px; }
 .homepage .well section { margin: 0; }
 .homepage .archive-form label { margin-bottom: 8px; }
@@ -42,8 +54,7 @@ html[data-language-pending] body { opacity: 0; pointer-events: none; }
   .directory .directory-festivals { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 600px) {
-  .homepage .page-header h1 { font-size: 27px; }
-  .homepage .page-header h1 small { display: block; margin-top: 8px; }
+  :is(.homepage, .global-search) .page-header h1 { font-size: 27px; }
   .homepage .well { padding: 12px; }
   .directory .directory-festivals { grid-template-columns: minmax(0, 1fr); }
   .directory-toolbar { flex-wrap: wrap; }

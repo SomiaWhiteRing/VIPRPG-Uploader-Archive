@@ -15,6 +15,12 @@ export const notFoundInfo: PageInfo = {
   description: { zh: "请核对上传区名称和文件编号，或返回目录通过原链接查找。", ja: "アップローダー名とファイル番号をご確認ください。アップローダー一覧では、元の URL からも検索できます。" },
 };
 
+export const globalSearchInfo: PageInfo = {
+  initialTitle: "ファイル検索 | VIPRPG",
+  title: { zh: `文件搜索 | ${siteName.zh}`, ja: `ファイル検索 | ${siteName.ja}` },
+  description: { zh: "在全部上传区中搜索文件名、评论和上传区。", ja: "すべてのアップローダーにあるファイルを、ファイル名・コメント・アップローダー名などで検索できます。" },
+};
+
 export function uploaderInfo(name: string, page?: string): PageInfo {
   return {
     initialTitle: `${name}${page ? ` · ${page}` : ""} | VIPRPG`,

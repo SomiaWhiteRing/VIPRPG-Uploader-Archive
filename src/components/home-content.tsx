@@ -8,7 +8,7 @@ import type { Uploader } from "@/lib/files";
 export default function HomeContent({ groups, updatedAt }: { groups: (Uploader & { title: string })[]; updatedAt: string }) {
   const { t } = useLanguage();
   return <div className="container homepage">
-    <div className="page-header"><h1>{t("VIPRPG 上传区保存库", "VIPRPG アップローダー保存庫")} <small>uploader.jp</small></h1>
+    <div className="page-header"><h1>{t("VIPRPG 上传区保存库", "VIPRPG アップローダー保存庫")}</h1>
     </div>
     <div className="well well-sm"><LinkLocator /></div>
     <Directory groups={groups} />
