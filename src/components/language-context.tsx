@@ -31,7 +31,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
       const next = language === "ja" ? "zh" : "ja";
       setLanguage(next);
       localStorage.setItem("uploader-language", next);
-    }}><Image src={`/icon/language-${language}.svg`} alt={language === "ja" ? "日本語" : "中文"} width={24} height={16} unoptimized /></a></li></ul>, target)}
+    }}><Image src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/icon/language-${language}.svg`} alt={language === "ja" ? "日本語" : "中文"} width={24} height={16} unoptimized /></a></li></ul>, target)}
   </LanguageContext.Provider>;
 }
 

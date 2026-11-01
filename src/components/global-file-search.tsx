@@ -55,7 +55,7 @@ export default function GlobalFileSearch() {
       setSearched(true);
       if (!files) {
         setSearching(true);
-        fetch("/search-data.json").then(response => {
+        fetch(`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/search-data.json`).then(response => {
           if (!response.ok) throw new Error("Search data request failed");
           return response.json();
         }).then(setFiles).catch(() => setSearched(false)).finally(() => setSearching(false));
