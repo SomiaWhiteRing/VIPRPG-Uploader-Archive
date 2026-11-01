@@ -100,6 +100,8 @@ node scripts/import_archive.mjs <rescue-root>
 
 `<rescue-root>` 为本地保存目录路径。导出后执行追加收录批次的合并流程，连同补充文件、保存状态和别名映射一起检查，再提交 JSON。网站构建读取这些 JSON 与模板。
 
+上传区原件的拉取、检测、分流、上传和验收步骤见 [上传区资料整理流程](docs/uploader-ingest-workflow.md)。
+
 后续保存的下载详情页可用 `node scripts/import_archive.mjs --missing-details <rescue-root> [<rescue-root> ...]` 仅补入遗漏，保留已有详情、上传区介绍和目录。
 
 ## 部署
