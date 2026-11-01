@@ -4,7 +4,7 @@ import { archive, getListing, getListingFiles } from "@/lib/archive";
 import UploaderView from "@/components/uploader-view";
 import PageMetadata from "@/components/page-metadata";
 import { uploaderInfo } from "@/lib/page-metadata";
-import originalPages from "@/data/original-pages.json";
+import originalTitles from "@/data/original-titles.json";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -15,6 +15,6 @@ export default async function UploaderPage({ params }: { params: Promise<{ uploa
   if (!groupsBySlug.has(uploader)) notFound();
   const details = archive.uploaders[uploader];
   const listing = getListing(`/${uploader}`)!;
-  const originalTitle = (originalPages as Record<string, { title: string }>)[`/${uploader}`]?.title;
+  const originalTitle = (originalTitles as Record<string, string>)[`/${uploader}`];
   return <><PageMetadata info={uploaderInfo(details.title, undefined, originalTitle)} /><UploaderView slug={uploader} details={details} listing={listing} files={getListingFiles(listing)} /></>;
 }

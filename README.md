@@ -10,7 +10,7 @@ uploader.jp / getuploader.com で公開された VIPRPG のゲーム・素材と
 
 Next.js と React で構造化 JSON を共通テンプレートに組み込み、静的サイトとして Cloudflare から配信します。本リポジトリはサイトと収録情報を管理し、保存ファイルは Internet Archive と GitHub Releases で提供しています。
 
-- `src/data/`：`catalog.json` はファイル索引、`archive.json` は元ページ情報、`directory*.json` は分類。補完ファイルや保存状態の対応表もここに置きます。
+- `src/data/`：`catalog.json` はファイル索引、`archive.json` は元ページ情報、`original-titles.json` は元ページのタイトル、`directory*.json` は分類。補完ファイルや保存状態の対応表もここに置きます。
 - `src/lib/`：索引・補完データの統合と表示用データの組み立て。
 - `src/components/`：共通の表示テンプレート。
 - `public/vendor/uploader/`：元サイト由来の CSS と素材。
@@ -64,7 +64,7 @@ node scripts/import_archive.mjs <rescue-root>
 
 网站使用 Next.js 和 React，将结构化 JSON 与共用模板生成静态页面，由 Cloudflare 提供访问。本仓库维护网站及收录信息，文件由 Internet Archive 和 GitHub Releases 提供。
 
-- `src/data/`：`catalog.json` 保存文件索引，`archive.json` 保存原页面信息，`directory*.json` 保存分类；补充文件和保存状态的映射也放在这里。
+- `src/data/`：`catalog.json` 保存文件索引，`archive.json` 保存原页面信息，`original-titles.json` 保存原页面标题，`directory*.json` 保存分类；补充文件和保存状态的映射也放在这里。
 - `src/lib/`：合并索引与补充数据，组织页面使用的数据。
 - `src/components/`：共用页面模板。
 - `public/vendor/uploader/`：源站 CSS 和素材。

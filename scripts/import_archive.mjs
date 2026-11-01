@@ -12,6 +12,9 @@ const catalog = JSON.parse(fs.readFileSync("src/data/catalog.json", "utf8"));
 const archive = missingDetailsOnly
   ? JSON.parse(fs.readFileSync("src/data/archive.json", "utf8"))
   : { uploaders: {}, files: {}, listings: {} };
+const originalTitles = missingDetailsOnly
+  ? JSON.parse(fs.readFileSync("src/data/original-titles.json", "utf8"))
+  : {};
 const knownGroups = new Set(catalog.groups.map(group => group.slug));
 const knownFiles = new Set(catalog.files.map(file => `${file.uploader}/${file.id}`));
 const candidates = new Map();
@@ -113,6 +116,7 @@ for (const [route, entries] of candidates) {
         };
       }
     }
+    originalTitles[route] = $("title").first().text();
     break;
   }
 }
@@ -127,6 +131,7 @@ for (const group of catalog.groups) assert.ok(archive.listings[`/${group.slug}`]
 const missing = catalog.files.filter(file => !archive.files[`${file.uploader}/${file.id}`]?.hasDetail).map(file => `${file.uploader}/${file.id}`);
 compactArchive(missingDetailsOnly ? { files: Object.fromEntries(imported.map(key => [key, archive.files[key]])) } : archive, catalog);
 fs.writeFileSync("src/data/archive.json", JSON.stringify(archive) + "\n");
+fs.writeFileSync("src/data/original-titles.json", JSON.stringify(originalTitles) + "\n");
 fs.mkdirSync("local/reports", { recursive: true });
 fs.writeFileSync("local/reports/archive-import.json", JSON.stringify({ roots, unreadable, imported, missing }, null, 2));
 console.log(JSON.stringify({ uploaders: Object.keys(archive.uploaders).length, details: Object.values(archive.files).filter(file => file.hasDetail).length, listings: Object.keys(archive.listings).length, imported: imported.length, missing: missing.length }));

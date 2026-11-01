@@ -5,7 +5,7 @@ import ArchiveChrome from "@/components/archive-chrome";
 import FileTable from "@/components/file-table";
 import PageMetadata from "@/components/page-metadata";
 import { searchInfo } from "@/lib/page-metadata";
-import originalPages from "@/data/original-pages.json";
+import originalTitles from "@/data/original-titles.json";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -16,7 +16,7 @@ export default async function SearchPage({ params }: { params: Promise<{ uploade
   const files = tableFilesByGroup.get(uploader);
   if (!files) notFound();
   const title = archive.uploaders[uploader]?.title || uploader;
-  const originalTitle = (originalPages as Record<string, { title: string }>)[`/${uploader}`]?.title;
+  const originalTitle = (originalTitles as Record<string, string>)[`/${uploader}`];
   return <ArchiveChrome title={title} slug={uploader}><div className="container">
     <PageMetadata info={searchInfo(title, originalTitle)} />
     <div className="page-header"><h1>{title} <small>uploader.jp</small></h1></div>
