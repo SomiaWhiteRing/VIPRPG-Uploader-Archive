@@ -22,7 +22,7 @@ export default function UploaderView({ slug, details, listing, files }: {
       <h3 className="h4">{details.title}</h3><table className="table"><tbody>{details.information.map(field => {
         const number = field.value.match(/^[\d,]+/)?.[0];
         const value = number && field.label === "ファイル" ? t(`${number} 个文件`, `${number} ファイル`) : number && field.label === "ダウンロード" ? t(`${number} 次下载`, `${number} ダウンロード`) : field.value;
-        return <tr key={field.label}><th>{t(labels[field.label] || field.label, field.label)}</th><td>{value}</td></tr>;
+        return <tr key={field.label}><th style={{ width: "31%" }}>{t(labels[field.label] || field.label, field.label)}</th><td>{value}</td></tr>;
       })}</tbody></table>
     </div></div></div>}
   </ArchiveChrome>;

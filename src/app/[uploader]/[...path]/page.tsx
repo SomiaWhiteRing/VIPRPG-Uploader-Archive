@@ -4,6 +4,7 @@ import { archive, getListing, getListingFiles } from "@/lib/archive";
 import { catalog } from "@/lib/catalog";
 import PageMetadata from "@/components/page-metadata";
 import { uploaderInfo } from "@/lib/page-metadata";
+import originalPages from "@/data/original-pages.json";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -19,5 +20,7 @@ export default async function ListingPage({ params }: Props) {
   const listing = getListing(`/${uploader}/${path.join("/")}`);
   if (!listing) notFound();
   const details = archive.uploaders[uploader];
-  return <><PageMetadata info={uploaderInfo(details.title, String(listing.page))} /><UploaderView slug={uploader} details={details} listing={listing} files={getListingFiles(listing)} /></>;
+  const pages = originalPages as Record<string, { title: string }>;
+  const originalTitle = pages[`/${uploader}/${path.join("/")}`]?.title || pages[`/${uploader}`]?.title;
+  return <><PageMetadata info={uploaderInfo(details.title, String(listing.page), originalTitle)} /><UploaderView slug={uploader} details={details} listing={listing} files={getListingFiles(listing)} /></>;
 }

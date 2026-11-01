@@ -21,26 +21,27 @@ export const globalSearchInfo: PageInfo = {
   description: { zh: "在全部上传区中搜索文件名、评论和上传区。", ja: "すべてのアップローダーにあるファイルを、ファイル名・コメント・アップローダー名などで検索できます。" },
 };
 
-export function uploaderInfo(name: string, page?: string): PageInfo {
+export function uploaderInfo(name: string, page?: string, originalTitle?: string): PageInfo {
   return {
     initialTitle: `${name}${page ? ` · ${page}` : ""} | VIPRPG`,
-    title: { zh: `${name}${page ? ` - 第 ${page} 页` : ""} | ${siteName.zh}`, ja: `${name}${page ? ` - ${page}ページ` : ""} | ${siteName.ja}` },
+    title: { zh: `${name}${page ? ` - 第 ${page} 页` : ""} | ${siteName.zh}`, ja: originalTitle || `${name} | uploader.jp` },
     description: { zh: `浏览 ${name} 的归档文件列表${page ? `，第 ${page} 页` : ""}，查看原文件信息与下载状态。`, ja: `${name} から保存したファイルの一覧${page ? `（${page}ページ）` : ""}。元のファイル情報とダウンロードの可否を確認できます。` },
   };
 }
 
-export function searchInfo(name: string): PageInfo {
+export function searchInfo(name: string, originalTitle?: string): PageInfo {
   return {
     initialTitle: `${name} | VIPRPG`,
-    title: { zh: `搜索 - ${name} | ${siteName.zh}`, ja: `検索 - ${name} | ${siteName.ja}` },
+    title: { zh: `搜索 - ${name} | ${siteName.zh}`, ja: `検索 | ${originalTitle || `${name} | uploader.jp`}` },
     description: { zh: `在 ${name} 中搜索归档文件名、编号和评论。`, ja: `${name} から保存したファイルを、ファイル名・番号・コメントで検索できます。` },
   };
 }
 
-export function fileInfo(name: string | null | undefined, id: string, uploader: string): PageInfo {
+export function fileInfo(name: string | null | undefined, id: string, uploader: string, displayName?: string, original?: string, originalTitle?: string): PageInfo {
+  const japaneseName = displayName || name || `ファイル #${id}`;
   return {
     initialTitle: `${name || `#${id}`} | VIPRPG`,
-    title: { zh: `${name || `文件 #${id}`} | ${siteName.zh}`, ja: `${name || `ファイル #${id}`} | ${siteName.ja}` },
+    title: { zh: `${name || `文件 #${id}`} | ${siteName.zh}`, ja: originalTitle || `${original || name || japaneseName} (${japaneseName}) ダウンロード | ${uploader} | uploader.jp` },
     description: { zh: `查看 ${uploader} 中 ${name || `文件 #${id}`} 的原始信息、归档状态与下载入口。`, ja: `${uploader} に投稿された ${name || `ファイル #${id}`} の詳細情報、保存状況、ダウンロード先を確認できます。` },
   };
 }
