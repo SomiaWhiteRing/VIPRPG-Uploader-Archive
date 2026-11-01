@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-31T11:21:56.929642+00:00",
+  "updatedAt": "2026-10-31T11:59:26.151480+00:00",
   "identifier": "VIPRPG-uploaderjp-Archive",
   "groups": [
     {
@@ -1985,10 +1985,9 @@
       "sourceUrl": "https://ux.getuploader.com/ifbbis/",
       "total": 152,
       "counts": {
-        "indexed": 141,
+        "indexed": 143,
         "not_uploaded": 8,
-        "excluded_security": 1,
-        "accepted": 2
+        "excluded_security": 1
       }
     },
     {
@@ -178369,7 +178368,7 @@
       "date": "17/10/20 22:31",
       "size": 8766,
       "localState": "done",
-      "state": "accepted",
+      "state": "indexed",
       "remotePath": "ifbbis/000044.txt",
       "requiresUnwrap": false,
       "archiveMember": null
@@ -178999,7 +178998,7 @@
       "date": "19/05/25 06:23",
       "size": 24724,
       "localState": "done",
-      "state": "accepted",
+      "state": "indexed",
       "remotePath": "ifbbis/000089.txt",
       "requiresUnwrap": false,
       "archiveMember": null
