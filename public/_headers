@@ -1,6 +1,0 @@
-/*
-  Cache-Control: public, max-age=0, must-revalidate, no-transform
-
-/search-data.json
-  ! Cache-Control
-  Cache-Control: public, max-age=0, must-revalidate

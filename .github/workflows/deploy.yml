@@ -43,7 +43,8 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
       - name: Check public routes
         run: |
-          curl --fail --silent --show-error --location --retry 8 --retry-all-errors --retry-delay 10 --connect-timeout 15 --max-time 60 https://uploader.viprpg.org/ --output /dev/null
+          curl --fail --silent --show-error --location --retry 8 --retry-all-errors --retry-delay 10 --connect-timeout 15 --max-time 60 -H 'Accept-Encoding: gzip' --dump-header /tmp/home-headers https://uploader.viprpg.org/ --output /dev/null
+          grep -qi '^content-encoding: gzip' /tmp/home-headers
           curl --fail --silent --show-error --location --retry 8 --retry-all-errors --retry-delay 10 --connect-timeout 15 --max-time 60 https://uploader.viprpg.org/part4past/download/1 --output /dev/null
           curl --fail --silent --show-error --location --retry 8 --retry-all-errors --retry-delay 10 --connect-timeout 15 --max-time 60 -H 'Accept-Encoding: gzip' --dump-header /tmp/search-headers https://uploader.viprpg.org/search-data.json --output /dev/null
           grep -qi '^content-encoding: gzip' /tmp/search-headers
