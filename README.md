@@ -102,6 +102,8 @@ node scripts/import_archive.mjs <rescue-root>
 
 上传区原件的拉取、检测、分流、上传和验收步骤见 [上传区资料整理流程](docs/uploader-ingest-workflow.md)。
 
+检查已收录上传区的新投稿和列表变动，使用 [可复用更新扫描器](docs/uploader-update-scan.md)。默认只查最新页，没有更新就停止；另支持手动完整分页复查及本地快照比较。
+
 后续保存的下载详情页可用 `node scripts/import_archive.mjs --missing-details <rescue-root> [<rescue-root> ...]` 仅补入遗漏，保留已有详情、上传区介绍和目录。
 
 ## 部署
