@@ -101,7 +101,7 @@ VT v3 的对应接口为 `GET https://www.virustotal.com/api/v3/files/{MD5}`、`
 ## 6. 网站数据与检查
 
 1. 将列表、详情、来源日期和上传区分类合并到 `SITE/src/data/`。`catalog.json` 管理索引与状态，`archive.json` 管理详情，`directory.json` 管理分类，`supplements.json` 关联 Release，`damaged-files.json` 记录来源损坏。
-2. 以 IA 公开验收结果设置 `indexed`；以 Release 完整读回结果添加补充链接。密码状态和来源损坏沿用网站已有状态与展示方式。
+2. IA 下载位置由 `ia-storage.json` 与 `ia-downloads.json` 决定，用 `scripts/sync_ia_downloads.py --plan <全量迁移计划>` 生成；它们与保存账本中的 `indexed` 状态独立。对已确认可靠原件的 IA 服务器端迁移，沿用现有校验值，通过匿名 HEAD 与长度确认下载可用性，不重新下载原件计算指纹；目标文件全部可下载后再统一切换网站。Release 补充链接、密码状态和来源损坏沿用现有映射与展示方式。
 3. 对照合并前快照检查既有目录、记录、链接与用户修改。保存本批同步记录及网站数据备份。
 4. 在网站仓库执行已有静态检查，并保存退出码及检查时间：
 

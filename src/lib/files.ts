@@ -20,7 +20,7 @@ export interface ArchiveFile {
   remotePath: string | null;
   requiresUnwrap: boolean;
   archiveMember: string | null;
-  downloadVerified?: boolean;
+  archiveDownload?: { identifier: string; path: string };
   supplement?: {
     url: string;
     md5: string;
@@ -38,12 +38,12 @@ export function filePath(file: Pick<ArchiveFile, "uploader" | "id">) {
 }
 
 export function canDownload(file: ArchiveFile) {
-  return Boolean(file.supplement || ((file.state === "indexed" || file.downloadVerified) && file.remotePath));
+  return Boolean(file.supplement || file.archiveDownload);
 }
 
 export function downloadUrl(file: ArchiveFile) {
   if (file.supplement) return file.supplement.url;
-  return `https://archive.org/download/VIPRPG-uploaderjp-Archive/${file.remotePath?.split("/").map(encodeURIComponent).join("/")}`;
+  if (file.archiveDownload) return `https://archive.org/download/${file.archiveDownload.identifier}/${file.archiveDownload.path.split("/").map(encodeURIComponent).join("/")}`;
 }
 
 export function fileStatus(file: ArchiveFile, language: "zh" | "ja" = "zh") {

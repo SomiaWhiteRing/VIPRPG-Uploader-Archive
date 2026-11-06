@@ -7,10 +7,12 @@ from pathlib import Path
 import sqlite3
 from contextlib import closing
 
+site = Path(__file__).resolve().parents[1]
+storage = json.loads((site / 'src/data/ia-storage.json').read_text(encoding='utf-8'))
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--root', type=Path, required=True)
 parser.add_argument('--work-name', default='ia-upload-uploaderjp')
-parser.add_argument('--identifier', default='VIPRPG-uploaderjp-Archive')
+parser.add_argument('--identifier', default=storage['identifier'])
 args = parser.parse_args()
 root = args.root.resolve()
 report = Path((root / 'reports/latest-ia-upload.txt').read_text(encoding='utf-8').strip())
@@ -47,7 +49,7 @@ for group in plan['groups']:
     groups.append({'slug': group['uploader'], 'sourceUrl': group['source_url'],
                    'total': len(records), 'counts': dict(Counter(file['state'] for file in records))})
 
-destination = Path(__file__).resolve().parents[1] / 'src/data/catalog.json'
+destination = site / 'src/data/catalog.json'
 destination.parent.mkdir(parents=True, exist_ok=True)
 destination.write_text(json.dumps({
     'updatedAt': datetime.now(timezone.utc).isoformat(),

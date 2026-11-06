@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import ArchiveChrome from "@/components/archive-chrome";
+import ArchiveNotice from "@/components/archive-notice";
 import { useLanguage } from "@/components/language-context";
 import { canDownload, downloadUrl, fileStatus, type ArchiveFile } from "@/lib/files";
 import type { FileDetails } from "@/lib/archive-types";
@@ -12,7 +13,12 @@ export default function FileView({ file, details, uploaderTitle, uploaderAvailab
   const { t, language } = useLanguage();
   const name = details?.displayName || file.name || `${t("文件", "ファイル")} #${file.id}`;
   const md5 = file.supplement?.md5 || details?.md5;
+  const supplementUrl = file.supplement && new URL(file.supplement.url);
+  const githubFilename = supplementUrl?.hostname === "github.com" ? decodeURIComponent(supplementUrl.pathname.split("/").pop()!) : undefined;
   return <ArchiveChrome title={uploaderTitle} slug={uploaderAvailable ? file.uploader : undefined}>
+    {githubFilename && <ArchiveNotice dismissible={false}>
+      {t(`本文件托管于Github Releases。由于托管系统限制，下载的文件名（${githubFilename}）会与原本的名称有所不同。`, `このファイルは GitHub Releases で配布しています。配布システムの制約により、ダウンロード時のファイル名（${githubFilename}）は元のファイル名と異なります。`)}
+    </ArchiveNotice>}
     <div className="container"><div className="page-header"><h2 className="h1">{uploaderTitle} <small>uploader.jp</small></h2></div>
       <h1 className="lead">{uploaderAvailable ? <Link prefetch={false} href={`/${file.uploader}`}>{uploaderTitle}</Link> : uploaderTitle}{t(" 中的文件：", " より、")}<strong>{name}</strong>{t("", " をダウンロードします。")}</h1>
     </div>

@@ -46,6 +46,8 @@ node scripts/import_archive.mjs <rescue-root>
 
 `<rescue-root>` はローカル保存元のパスです。書き出し後に追加収録分の統合処理を行い、補完ファイル・保存状態・別名の対応表を含めて確認し、JSON をコミットします。サイトのビルドは、これらの JSON とテンプレートを読み込みます。
 
+IA のダウンロード先は `ia-storage.json` と `ia-downloads.json` で管理します。`python -X utf8 -B scripts/sync_ia_downloads.py --plan <ia-migration-plan.json>` で全量の移行計画から生成します。元の保存状態と別に管理し、IA の公開インデックスへの反映を公開条件にせず、移行先の全ファイルが匿名でダウンロードできることを確認してからサイトを公開します。
+
 後から保存したダウンロード詳細ページは、`node scripts/import_archive.mjs --missing-details <rescue-root> [<rescue-root> ...]` で未収録分のみを取り込めます。既存の詳細・アップローダー紹介・一覧は保持されます。
 
 ## デプロイ
@@ -104,6 +106,8 @@ node scripts/import_archive.mjs <rescue-root>
 
 检查已收录上传区的新投稿和列表变动，使用 [可复用更新扫描器](docs/uploader-update-scan.md)。默认只查最新页，没有更新就停止；另支持手动完整分页复查及本地快照比较。
 
+IA 下载位置由 `ia-storage.json` 和 `ia-downloads.json` 管理。使用 `python -X utf8 -B scripts/sync_ia_downloads.py --plan <ia-migration-plan.json>` 从全量迁移计划生成，与原保存账本状态分开。IA 公开索引状态不作为网站发布条件；切换归档前确认目标文件全部可匿名下载，再统一发布网站。
+
 后续保存的下载详情页可用 `node scripts/import_archive.mjs --missing-details <rescue-root> [<rescue-root> ...]` 仅补入遗漏，保留已有详情、上传区介绍和目录。
 
 ## 部署
@@ -112,6 +116,6 @@ node scripts/import_archive.mjs <rescue-root>
 
 [site]: https://uploader.viprpg.org/
 [mirror]: https://somiawhitering.github.io/VIPRPG-Uploader-Archive/
-[ia]: https://archive.org/details/VIPRPG-uploaderjp-Archive
+[ia]: https://archive.org/details/VIPRPG-uploader-Archive-v2
 [release]: https://github.com/SomiaWhiteRing/VIPRPG-Uploader-Archive/releases/latest
 [directory]: https://viprpg.neocities.org/contents/uploader
