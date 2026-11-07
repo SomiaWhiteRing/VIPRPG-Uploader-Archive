@@ -19,5 +19,9 @@ export default async function FilePage({ params }: Props) {
   const title = archive.uploaders[file.uploader]?.title || file.uploader;
   const details = archive.files[key];
   const originalTitle = (originalTitles as Record<string, string>)[`/${uploader}/download/${id}`];
-  return <><PageMetadata info={fileInfo(file.name, id, title, details?.displayName, details?.original, originalTitle)} /><FileView file={file} details={details} uploaderTitle={title} uploaderAvailable={groupsBySlug.has(file.uploader)} /></>;
+  // Give the router a scroll target in the body when React hoists the metadata.
+  return <div>
+    <PageMetadata info={fileInfo(file.name, id, title, details?.displayName, details?.original, originalTitle)} />
+    <FileView file={file} details={details} uploaderTitle={title} uploaderAvailable={groupsBySlug.has(file.uploader)} />
+  </div>;
 }
