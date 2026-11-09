@@ -5,6 +5,7 @@ import downloadSnapshot from "@/data/ia-downloads.json";
 import storage from "@/data/ia-storage.json";
 import aliasSnapshot from "@/data/source-aliases.json";
 import { canDownload, type ArchiveFile, type Uploader } from "@/lib/files";
+import { excludedUploaders } from "@/lib/uploader-visibility";
 
 const supplements: { releaseUrl: string; files: { uploader: string; id: string; url: string; md5: string; size: number; modified: boolean; releaseUrl?: string }[] } = supplementSnapshot;
 const supplementsByKey = new Map(supplements.files.map(file => [`${file.uploader}/${file.id}`, file]));
@@ -15,7 +16,8 @@ const snapshotByKey = new Map(snapshot.files.map(file => [`${file.uploader}/${fi
 export const catalog: { updatedAt: string; identifier: string; groups: Uploader[]; files: ArchiveFile[] } = {
   ...snapshot,
   identifier: storage.identifier,
-  files: snapshot.files.map(source => {
+  groups: snapshot.groups.filter(group => !excludedUploaders.has(group.slug)),
+  files: snapshot.files.filter(file => !excludedUploaders.has(file.uploader)).map(source => {
     const key = `${source.uploader}/${source.id}`;
     const canonical = sourceAliases[key];
     const file = canonical ? { ...snapshotByKey.get(canonical)!, uploader: source.uploader, sourceUrl: source.sourceUrl } : source;

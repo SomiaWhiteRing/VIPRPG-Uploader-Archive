@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useLanguage } from "@/components/language-context";
+import { linkOnlyUploaders } from "@/lib/uploader-visibility";
 
 export default function LinkLocator() {
   const [value, setValue] = useState("");
@@ -32,7 +33,10 @@ export default function LinkLocator() {
         path = url.hostname.toLowerCase() === "somiawhitering.github.io" ? url.pathname.replace(/^\/VIPRPG-Uploader-Archive(?=\/|$)/i, "") : url.pathname;
       }
       const match = path.match(/^\/?([A-Za-z0-9_-]+)(?:\/(?:download\/)?([0-9]+)(?:\/[^?#]*)?)?\/?(?:[?#].*)?$/);
-      if (!match) { setError("未识别到上传区或文件编号，请保留原地址中的 /上传区/download/编号。"); return; }
+      if (!match || (linkOnlyUploaders.has(match[1]) && path === input && !path.startsWith("/"))) {
+        setError("未识别到上传区或文件编号，请保留原地址中的 /上传区/download/编号。");
+        return;
+      }
       router.push(`/${match[1]}${match[2] ? `/download/${Number(match[2])}` : ""}`);
     }}>
       <label htmlFor="source-link">{t("通过原链接查找", "元の URL から検索")}</label>

@@ -1,14 +1,17 @@
 import { notFound } from "next/navigation";
 import UploaderView from "@/components/uploader-view";
 import { archive, getListing, getListingFiles } from "@/lib/archive";
-import { catalog } from "@/lib/catalog";
+import { catalog, groupsBySlug } from "@/lib/catalog";
 import PageMetadata from "@/components/page-metadata";
 import { uploaderInfo } from "@/lib/page-metadata";
 import originalTitles from "@/data/original-titles.json";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
-  const routes = new Set([...Object.keys(archive.listings).filter(route => route.includes("/index/")), ...catalog.groups.map(group => `/${group.slug}/index/date/desc/1`)]);
+  const listings = Object.entries(archive.listings)
+    .filter(([route, listing]) => route.includes("/index/") && groupsBySlug.has(listing.uploader))
+    .map(([route]) => route);
+  const routes = new Set([...listings, ...catalog.groups.map(group => `/${group.slug}/index/date/desc/1`)]);
   return [...routes].map(route => {
     const [uploader, ...path] = route.slice(1).split("/");
     return { uploader, path };
@@ -17,6 +20,7 @@ export function generateStaticParams() {
 type Props = { params: Promise<{ uploader: string; path: string[] }> };
 export default async function ListingPage({ params }: Props) {
   const { uploader, path } = await params;
+  if (!groupsBySlug.has(uploader)) notFound();
   const listing = getListing(`/${uploader}/${path.join("/")}`);
   if (!listing) notFound();
   const details = archive.uploaders[uploader];
