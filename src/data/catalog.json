@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-05T23:43:53.691175+00:00",
+  "updatedAt": "2026-11-12T12:05:25.048510+00:00",
   "identifier": "VIPRPG-uploaderjp-Archive",
   "groups": [
     {
@@ -2082,6 +2082,14 @@
       "sourceUrl": "https://uu.getuploader.com/viprpgsun2016_2/",
       "total": 0,
       "counts": {}
+    },
+    {
+      "slug": "PokeoParody",
+      "sourceUrl": "https://uu.getuploader.com/PokeoParody/",
+      "total": 3,
+      "counts": {
+        "excluded_security": 3
+      }
     }
   ],
   "files": [
@@ -184317,6 +184325,48 @@
       "listedSize": "3.8 MB",
       "date": "26/11/01 22:29",
       "size": 3957204,
+      "localState": "done",
+      "state": "excluded_security",
+      "remotePath": null,
+      "requiresUnwrap": false,
+      "archiveMember": null
+    },
+    {
+      "uploader": "PokeoParody",
+      "id": "17",
+      "name": "ポケ鬼１ＥＳ.zip",
+      "sourceUrl": "https://uu.getuploader.com/PokeoParody/download/17",
+      "listedSize": "4.1 MB",
+      "date": "17/12/11 12:08",
+      "size": 4303980,
+      "localState": "done",
+      "state": "excluded_security",
+      "remotePath": null,
+      "requiresUnwrap": false,
+      "archiveMember": null
+    },
+    {
+      "uploader": "PokeoParody",
+      "id": "18",
+      "name": "チェイスとクロスがおどるだけ.zip",
+      "sourceUrl": "https://uu.getuploader.com/PokeoParody/download/18",
+      "listedSize": "1.2 MB",
+      "date": "23/08/10 23:40",
+      "size": 1217319,
+      "localState": "done",
+      "state": "excluded_security",
+      "remotePath": null,
+      "requiresUnwrap": false,
+      "archiveMember": null
+    },
+    {
+      "uploader": "PokeoParody",
+      "id": "20",
+      "name": "もしもフリックス・アレイだったら.zip",
+      "sourceUrl": "https://uu.getuploader.com/PokeoParody/download/20",
+      "listedSize": "6.0 MB",
+      "date": "25/11/11 12:13",
+      "size": 6248521,
       "localState": "done",
       "state": "excluded_security",
       "remotePath": null,
