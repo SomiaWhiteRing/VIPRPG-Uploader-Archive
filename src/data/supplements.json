@@ -7296,6 +7296,24 @@
       "size": 5632,
       "modified": false,
       "releaseUrl": "https://github.com/SomiaWhiteRing/VIPRPG-Uploader-Archive/releases/tag/vt-supplement-2026-10-28"
+    },
+    {
+      "uploader": "viprpg_erg",
+      "id": "255",
+      "url": "https://github.com/SomiaWhiteRing/VIPRPG-Uploader-Archive/releases/download/vt-supplement-2026-10-28/viprpg_erg__000255.zip",
+      "md5": "7ff6121ae38d38770ec52776f45085ed",
+      "size": 57245442,
+      "modified": false,
+      "releaseUrl": "https://github.com/SomiaWhiteRing/VIPRPG-Uploader-Archive/releases/tag/vt-supplement-2026-10-28"
+    },
+    {
+      "uploader": "viprpg_erg5",
+      "id": "348",
+      "url": "https://github.com/SomiaWhiteRing/VIPRPG-Uploader-Archive/releases/download/vt-supplement-2026-10-28/viprpg_erg5__000348.zip",
+      "md5": "c82cc122d211fdac342470e0ee452603",
+      "size": 1343734,
+      "modified": false,
+      "releaseUrl": "https://github.com/SomiaWhiteRing/VIPRPG-Uploader-Archive/releases/tag/vt-supplement-2026-10-28"
     }
   ]
 }

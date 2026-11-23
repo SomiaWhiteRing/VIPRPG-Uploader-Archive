@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-16T00:03:52.457345+00:00",
+  "updatedAt": "2026-11-23T20:40:04.565199+00:00",
   "identifier": "VIPRPG-uploaderjp-Archive",
   "groups": [
     {
@@ -37,9 +37,8 @@
       "sourceUrl": "https://ux.getuploader.com/viprpg_erg/",
       "total": 685,
       "counts": {
-        "indexed": 643,
-        "excluded_security": 40,
-        "not_uploaded": 2
+        "indexed": 644,
+        "excluded_security": 41
       }
     },
     {
@@ -199,9 +198,9 @@
       "sourceUrl": "https://uu.getuploader.com/viprpg_erg2/",
       "total": 950,
       "counts": {
-        "indexed": 903,
+        "indexed": 904,
         "excluded_security": 38,
-        "not_uploaded": 5,
+        "not_uploaded": 4,
         "excluded_encrypted": 1,
         "held_security": 3
       }
@@ -234,8 +233,8 @@
       "total": 555,
       "counts": {
         "indexed": 502,
-        "excluded_security": 46,
-        "not_uploaded": 6,
+        "excluded_security": 47,
+        "not_uploaded": 5,
         "held_security": 1
       }
     },
@@ -256,9 +255,9 @@
       "total": 329,
       "counts": {
         "held_security": 2,
-        "indexed": 289,
+        "indexed": 290,
         "excluded_security": 35,
-        "not_uploaded": 3
+        "not_uploaded": 2
       }
     },
     {
@@ -2109,6 +2108,15 @@
         "indexed": 66,
         "excluded_security": 17,
         "not_uploaded": 10
+      }
+    },
+    {
+      "slug": "rpg_maker_material",
+      "sourceUrl": "https://ux.getuploader.com/rpg_maker_material/",
+      "total": 13,
+      "counts": {
+        "indexed": 11,
+        "not_uploaded": 2
       }
     }
   ],
@@ -64210,9 +64218,9 @@
       "sourceUrl": "https://uu.getuploader.com/viprpg_erg/download/255",
       "listedSize": "54.6 MB",
       "date": "20/02/09 22:07",
-      "size": null,
-      "localState": "skipped_password",
-      "state": "not_uploaded",
+      "size": 57245442,
+      "localState": "done",
+      "state": "excluded_security",
       "remotePath": null,
       "requiresUnwrap": false,
       "archiveMember": null
@@ -64224,10 +64232,10 @@
       "sourceUrl": "https://uu.getuploader.com/viprpg_erg/download/256",
       "listedSize": "43.3 MB",
       "date": "20/02/09 22:07",
-      "size": null,
-      "localState": "skipped_password",
-      "state": "not_uploaded",
-      "remotePath": null,
+      "size": 45387118,
+      "localState": "done",
+      "state": "indexed",
+      "remotePath": "viprpg_erg/000256/cs2k.zip",
       "requiresUnwrap": false,
       "archiveMember": null
     },
@@ -72778,10 +72786,10 @@
       "sourceUrl": "https://uu.getuploader.com/viprpg_erg2/download/172",
       "listedSize": "179.2 KB",
       "date": "20/06/11 20:44",
-      "size": null,
-      "localState": "skipped_password",
-      "state": "not_uploaded",
-      "remotePath": null,
+      "size": 183485,
+      "localState": "done",
+      "state": "indexed",
+      "remotePath": "viprpg_erg2/000172/お名前ファンタジー.zip",
       "requiresUnwrap": false,
       "archiveMember": null
     },
@@ -99490,9 +99498,9 @@
       "sourceUrl": "https://uu.getuploader.com/viprpg_erg5/download/348",
       "listedSize": "1.3 MB",
       "date": "22/02/04 20:08",
-      "size": null,
-      "localState": "skipped_password",
-      "state": "not_uploaded",
+      "size": 1343734,
+      "localState": "done",
+      "state": "excluded_security",
       "remotePath": null,
       "requiresUnwrap": false,
       "archiveMember": null
@@ -110802,10 +110810,10 @@
       "sourceUrl": "https://uu.getuploader.com/viprpg_erg7/download/67",
       "listedSize": "24.4 MB",
       "date": "23/02/28 22:26",
-      "size": null,
-      "localState": "skipped_password",
-      "state": "not_uploaded",
-      "remotePath": null,
+      "size": 25633085,
+      "localState": "done",
+      "state": "indexed",
+      "remotePath": "viprpg_erg7/000067/パッフェと愉快な仲間達.zip",
       "requiresUnwrap": false,
       "archiveMember": null
     },
@@ -185930,6 +185938,188 @@
       "localState": "done",
       "state": "indexed",
       "remotePath": "boonrpg/000106/SOSdann.jpg",
+      "requiresUnwrap": false,
+      "archiveMember": null
+    },
+    {
+      "uploader": "rpg_maker_material",
+      "id": "3",
+      "name": "マップチップ色々.zip",
+      "sourceUrl": "https://uu.getuploader.com/rpg_maker_material/download/3",
+      "listedSize": "325.8 KB",
+      "date": "12/12/05 04:44",
+      "size": 333628,
+      "localState": "done",
+      "state": "indexed",
+      "remotePath": "rpg_maker_material/000003/マップチップ色々.zip",
+      "requiresUnwrap": false,
+      "archiveMember": null
+    },
+    {
+      "uploader": "rpg_maker_material",
+      "id": "4",
+      "name": "マップ宇宙.zip",
+      "sourceUrl": "https://uu.getuploader.com/rpg_maker_material/download/4",
+      "listedSize": "120.6 KB",
+      "date": "12/12/05 04:44",
+      "size": 123508,
+      "localState": "done",
+      "state": "indexed",
+      "remotePath": "rpg_maker_material/000004/マップ宇宙.zip",
+      "requiresUnwrap": false,
+      "archiveMember": null
+    },
+    {
+      "uploader": "rpg_maker_material",
+      "id": "5",
+      "name": "船マップ組み＋RTP改変マップksg.zip",
+      "sourceUrl": "https://uu.getuploader.com/rpg_maker_material/download/5",
+      "listedSize": "1.4 MB",
+      "date": "12/12/05 04:44",
+      "size": 1447702,
+      "localState": "done",
+      "state": "indexed",
+      "remotePath": "rpg_maker_material/000005/船マップ組み＋RTP改変マップksg.zip",
+      "requiresUnwrap": false,
+      "archiveMember": null
+    },
+    {
+      "uploader": "rpg_maker_material",
+      "id": "22",
+      "name": "2003マップ改変素材MV版.zip",
+      "sourceUrl": "https://uu.getuploader.com/rpg_maker_material/download/22",
+      "listedSize": "18.5 MB",
+      "date": "16/01/17 21:41",
+      "size": 19376066,
+      "localState": "done",
+      "state": "indexed",
+      "remotePath": "rpg_maker_material/000022/2003マップ改変素材MV版.zip",
+      "requiresUnwrap": false,
+      "archiveMember": null
+    },
+    {
+      "uploader": "rpg_maker_material",
+      "id": "32",
+      "name": "www.zip",
+      "sourceUrl": "https://uu.getuploader.com/rpg_maker_material/download/32",
+      "listedSize": "29.4 MB",
+      "date": "17/02/01 04:04",
+      "size": null,
+      "localState": "skipped_password",
+      "state": "not_uploaded",
+      "remotePath": null,
+      "requiresUnwrap": false,
+      "archiveMember": null
+    },
+    {
+      "uploader": "rpg_maker_material",
+      "id": "35",
+      "name": "RTP改変素材MV用.zip",
+      "sourceUrl": "https://uu.getuploader.com/rpg_maker_material/download/35",
+      "listedSize": "99.8 MB",
+      "date": "17/10/06 19:59",
+      "size": 104641523,
+      "localState": "done",
+      "state": "indexed",
+      "remotePath": "rpg_maker_material/000035/RTP改変素材MV用.zip",
+      "requiresUnwrap": false,
+      "archiveMember": null
+    },
+    {
+      "uploader": "rpg_maker_material",
+      "id": "36",
+      "name": "tilesets16.zip",
+      "sourceUrl": "https://uu.getuploader.com/rpg_maker_material/download/36",
+      "listedSize": "854.9 KB",
+      "date": "17/10/07 05:29",
+      "size": 875396,
+      "localState": "done",
+      "state": "indexed",
+      "remotePath": "rpg_maker_material/000036/tilesets16.zip",
+      "requiresUnwrap": false,
+      "archiveMember": null
+    },
+    {
+      "uploader": "rpg_maker_material",
+      "id": "38",
+      "name": "がらくた顔グラ(2014_10_8).zip",
+      "sourceUrl": "https://uu.getuploader.com/rpg_maker_material/download/38",
+      "listedSize": "250.4 KB",
+      "date": "17/10/13 20:47",
+      "size": 256435,
+      "localState": "done",
+      "state": "indexed",
+      "remotePath": "rpg_maker_material/000038/がらくた顔グラ(2014_10_8).zip",
+      "requiresUnwrap": false,
+      "archiveMember": null
+    },
+    {
+      "uploader": "rpg_maker_material",
+      "id": "39",
+      "name": "2003マップ改変素材コレクション２.zip",
+      "sourceUrl": "https://uu.getuploader.com/rpg_maker_material/download/39",
+      "listedSize": "7.9 MB",
+      "date": "18/01/16 20:54",
+      "size": 8260497,
+      "localState": "done",
+      "state": "indexed",
+      "remotePath": "rpg_maker_material/000039/2003マップ改変素材コレクション２.zip",
+      "requiresUnwrap": false,
+      "archiveMember": null
+    },
+    {
+      "uploader": "rpg_maker_material",
+      "id": "40",
+      "name": "tw01.png",
+      "sourceUrl": "https://uu.getuploader.com/rpg_maker_material/download/40",
+      "listedSize": "49.4 KB",
+      "date": "18/04/06 09:19",
+      "size": 50606,
+      "localState": "done",
+      "state": "indexed",
+      "remotePath": "rpg_maker_material/000040/tw01.png",
+      "requiresUnwrap": false,
+      "archiveMember": null
+    },
+    {
+      "uploader": "rpg_maker_material",
+      "id": "42",
+      "name": "2003マップ改変素材コレクション2修正版.zip",
+      "sourceUrl": "https://uu.getuploader.com/rpg_maker_material/download/42",
+      "listedSize": "3.7 MB",
+      "date": "18/06/27 22:09",
+      "size": 3898987,
+      "localState": "done",
+      "state": "indexed",
+      "remotePath": "rpg_maker_material/000042/2003マップ改変素材コレクション2修正版.zip",
+      "requiresUnwrap": false,
+      "archiveMember": null
+    },
+    {
+      "uploader": "rpg_maker_material",
+      "id": "43",
+      "name": "2003マップ改変素材コレクション2修正版の通常色版.zip",
+      "sourceUrl": "https://uu.getuploader.com/rpg_maker_material/download/43",
+      "listedSize": "3.9 MB",
+      "date": "18/07/03 02:35",
+      "size": 4040974,
+      "localState": "done",
+      "state": "indexed",
+      "remotePath": "rpg_maker_material/000043/2003マップ改変素材コレクション2修正版の通常色版.zip",
+      "requiresUnwrap": false,
+      "archiveMember": null
+    },
+    {
+      "uploader": "rpg_maker_material",
+      "id": "72",
+      "name": "SMF真.zip",
+      "sourceUrl": "https://uu.getuploader.com/rpg_maker_material/download/72",
+      "listedSize": "55.0 MB",
+      "date": "21/08/21 05:30",
+      "size": null,
+      "localState": "skipped_password",
+      "state": "not_uploaded",
+      "remotePath": null,
       "requiresUnwrap": false,
       "archiveMember": null
     }
